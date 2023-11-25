@@ -15,7 +15,7 @@ def PlaceCreate(request):
     if request.method == 'POST':
         data = request.body.decode('utf-8')
         data_json = json.loads(data)
-        place = Variable()
+        place = Place()
         place.name = data_json["name"]
         place.save()
-        return HttpResponse("successfully created variable")
+        return HttpResponse("successfully created place")
