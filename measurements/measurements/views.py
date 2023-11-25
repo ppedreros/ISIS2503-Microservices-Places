@@ -42,7 +42,8 @@ def MeasurementCreate(request):
                 measurement.place = data_json['place']
                 measurement.save()
                 return HttpResponse("successfully created measurement")
-            else: HttpResponse("unsuccessfully created measurement. Place does not exist")
+            else: 
+                return HttpResponse("unsuccessfully created measurement. Place does not exist")
         else:
             return HttpResponse("unsuccessfully created measurement. Variable does not exist")
 
